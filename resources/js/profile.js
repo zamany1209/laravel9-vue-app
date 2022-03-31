@@ -9,7 +9,7 @@
  // window.Vue = require('vue').default;
  import { createApp } from "vue";
  import router from './router'
- import CompaniesIndex from './components/Index'
+ import CompaniesIndex from './user/Index'
  
  createApp({
      components: {
