@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Resources\ProductResource;
 use App\Models\Product;
+use App\Models\Category;
 
 class ProductController extends Controller
 {
@@ -26,27 +27,86 @@ class ProductController extends Controller
         //
         if(isset($request->_token))
         {
-            if($request->category == "All")
+            if(!empty($request->search))
             {
-                return ProductResource::collection(Product::where('featured' ,'1')->get());  
-            }
-            else{
-                if($request->new == "1")
+                $query_product = Product::where('featured' ,'1')->where('name', 'like', '%' . $request->search . '%');
+                if(!empty($request->category))
                 {
-                    return ProductResource::collection(Product::where('featured' ,'1')->where('category' , $request->category)->where('new','1')->get());
+                    $query_product->where('category' , $request->category);
                 }
-                // elseif($request->new)
-                // {
+                if($request->new == true)
+                {
+                    $query_product->where('new' ,'1');
+                }
 
-                // }
-                return ProductResource::collection(Product::where('featured' ,'1')->where('category' , $request->category)->get()); 
+                if(!empty($request->sort_price))
+                {
+                    if($request->sort_price == 'low_high')
+                    {
+                        $query_product->orderBy('price');
+                    }
+                    elseif($request->sort_price == 'high_low')
+                    {
+                        $query_product->orderBy('price', 'desc');
+                    }
+                }
+                return ProductResource::collection($query_product->get());
             }
+
+
+            else
+            {
+                if(empty($request->category))
+                {
+                $query_product = Product::where('featured' ,'1');
+                }
+                elseif(!empty($request->category))
+                {
+                    $query_product = Product::where('featured' ,'1')->where('category' , $request->category);
+                }
+                if($request->new == true)
+                {
+                    $query_product->where('new' ,'1');
+                }
+                if(!empty($request->sort_price))
+                {
+                    if($request->sort_price == 'low_high')
+                    {
+                        $query_product->orderBy('price');
+                    }
+                    elseif($request->sort_price == 'high_low')
+                    {
+                        $query_product->orderBy('price', 'desc');
+                    }
+                }
+                return ProductResource::collection($query_product->get());
+            }
+
+            // if($request->category == "All")
+            // {
+            //     return ProductResource::collection(Product::where('featured' ,'1')->get());  
+            // }
+            // else{
+            //     if($request->new == "1")
+            //     {
+            //         return ProductResource::collection(Product::where('featured' ,'1')->where('category' , $request->category)->where('new','1')->get());
+            //     }
+            //     // elseif($request->new)
+            //     // {
+
+            //     // }
+            //     return ProductResource::collection(Product::where('featured' ,'1')->where('category' , $request->category)->get()); 
+            // }
         }
         else{
             return "not";
         }
     }
-
+    public function list_categor()
+    {
+        //
+        return Category::All();
+    }
     /**
      * Show the form for creating a new resource.
      *

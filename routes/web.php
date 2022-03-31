@@ -18,6 +18,7 @@ Route::get('/11', function () {
 });
 Route::post('product-list/', [ProductController::class,'index']);
 Route::post('product-list-category/', [ProductController::class,'category']);
+Route::get('list-category/', [ProductController::class,'list_categor']);
 Route::get('/', function () {
     return view('index');
 });
@@ -29,6 +30,10 @@ Route::get('/products', function () {
 // });
 
 Auth::routes();
+Route::get('/profile', function () {
+    // Only authenticated users may access this route...
+    return view('index');
+})->middleware('auth');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 // Route::view('/{any}', 'index')
 //     ->middleware('auth')
