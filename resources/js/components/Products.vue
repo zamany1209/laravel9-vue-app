@@ -125,7 +125,7 @@ export default {
     methods: {
         getProducts()
         {
-        axios.post('http://127.0.0.1:8000/product-list-category/',
+        axios.post('http://127.0.0.1:8000/api/product-list-category/',
         {
             '_token':this.content,
             'search':this.Category.search,
@@ -137,7 +137,7 @@ export default {
         },
         getCategory()
         {
-        axios.get('http://127.0.0.1:8000/list-category/')
+        axios.get('http://127.0.0.1:8000/api/list-category/')
         .then(response => (this.List_category = response.data))
         }
     },

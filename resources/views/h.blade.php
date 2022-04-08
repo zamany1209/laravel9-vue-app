@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 </head>
 <body>
-    <form action="http://127.0.0.1:8000/product-list-category/" method="post">
+    <form action="http://127.0.0.1:8000/data-user/" method="post">
         @csrf
         <input type="text" name="search" placeholder="search">
         <input type="text" name="new" placeholder="new"/>
