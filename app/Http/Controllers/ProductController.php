@@ -19,7 +19,7 @@ class ProductController extends Controller
         //
         if(isset($request->_token))
         {
-        return  ProductResource::collection(Product::where('featured' ,'1')->get());
+            return  ProductResource::collection(Product::where('featured' ,'1')->get());
         }
     }
     public function category(Request $request)
@@ -100,6 +100,14 @@ class ProductController extends Controller
         }
         else{
             return "not";
+        }
+    }
+    public function list_product_category(Request $request)
+    {
+        //
+        if(isset($request->_token))
+        {
+            return  ProductResource::collection(Product::where('featured' ,'1')->where('category' , $request->category)->get());
         }
     }
     public function list_categor()
