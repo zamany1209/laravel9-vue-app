@@ -21,7 +21,7 @@ Route::get('/', function () {
     return view('index');
 });
 Route::get('/products', function () {
-    return view('index');
+    return view('product');
 });
 // Route::get('/', function () {
 //     return view('welcome');

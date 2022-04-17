@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Resources\ProductResource;
+use App\Http\Resources\ProductIndexResource;
 use App\Models\Product;
 use App\Models\Category;
 
@@ -19,7 +20,7 @@ class ProductController extends Controller
         //
         if(isset($request->_token))
         {
-            return  ProductResource::collection(Product::where('featured' ,'1')->get());
+            return  ProductIndexResource::collection(Product::where('featured' ,'1')->get());
         }
     }
     public function category(Request $request)
@@ -107,7 +108,7 @@ class ProductController extends Controller
         //
         if(isset($request->_token))
         {
-            return  ProductResource::collection(Product::where('featured' ,'1')->where('category' , $request->category)->get());
+            return  ProductIndexResource::collection(Product::where('featured' ,'1')->where('category' , $request->category)->get());
         }
     }
     public function list_categor()

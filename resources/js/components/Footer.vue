@@ -6,7 +6,7 @@
                     <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
                         <div class="footer-block footer-about">
                             <div class="f-logo">
-                                <a href="#"><img src="img/logo.png" alt="" class="img-reponsive"></a>
+                                <a href="#"><img src="http://127.0.0.1:8000/img/logo.png" alt="" class="img-reponsive"></a>
                             </div>
                             <ul class="footer-block-content">
                                 <li class="address">
@@ -85,12 +85,12 @@
                 <div class="row flex lr">
                     <div class="col-xs-6 f-copyright"><span>© 2010-2018 EngoTheme. All rights reserved.</span></div>
                     <div class="col-xs-6 f-payment hidden-xs">
-                        <a href="#"><img src="img/payment/mastercard.png" alt="" class="img-reponsive"></a>
-                        <a href="#"><img src="img/payment/paypal.png" alt="" class="img-reponsive"></a>
-                        <a href="#"><img src="img/payment/visa.png" alt="" class="img-reponsive"></a>
-                        <a href="#"><img src="img/payment/american-express.png" alt="" class="img-reponsive"></a>
-                        <a href="#"><img src="img/payment/western-union.png" alt="" class="img-reponsive"></a>
-                        <a href="#"><img src="img/payment/jcb.png" alt="" class="img-reponsive"></a>
+                        <a href="#"><img src="http://127.0.0.1:8000/img/payment/mastercard.png" alt="" class="img-reponsive"></a>
+                        <a href="#"><img src="http://127.0.0.1:8000/img/payment/paypal.png" alt="" class="img-reponsive"></a>
+                        <a href="#"><img src="http://127.0.0.1:8000/img/payment/visa.png" alt="" class="img-reponsive"></a>
+                        <a href="#"><img src="http://127.0.0.1:8000/img/payment/american-express.png" alt="" class="img-reponsive"></a>
+                        <a href="#"><img src="http://127.0.0.1:8000/img/payment/western-union.png" alt="" class="img-reponsive"></a>
+                        <a href="#"><img src="http://127.0.0.1:8000/img/payment/jcb.png" alt="" class="img-reponsive"></a>
                     </div>
                 </div>
             </div>

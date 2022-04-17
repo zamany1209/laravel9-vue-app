@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{ asset('css/slick-theme.css') }}">
     <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-slider.css') }}">
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
@@ -21,11 +22,11 @@
 
         <router-view _token="{{ csrf_token() }}" />
     </div>
+
     <script src="{{ asset('js/jquery.js') }}"></script>
     <script src="{{ asset('js/bootstrap.js') }}"></script>
     <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
     <script src="{{ asset('js/slick.min.js') }}"></script>
-    <script src="{{ asset('js/countdown.js') }}"></script>
     <script src="{{ asset('js/bootstrap-slider.min.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
 </body>

@@ -275,8 +275,8 @@
                                 <div v-for="Products in Products" :key="Products.id" class="col-xs-6 col-sm-6 col-md-4 col-lg-4 product-item">
                                     <div class="pd-bd product-inner">
                                         <div class="product-img">
-                                            <a href="#"><img src="img/product/pd3.jpg" alt="" class="img-reponsive"></a>
-                                            <div class="ribbon-price red"><span>- 30% </span></div>
+                                            <a href="#"><img :src="'product/'+ Products.url_img" alt="" class="img-reponsive"></a>
+                                            <div v-if="Products.new == 1" class="ribbon-price red"><span>New</span></div>
                                         </div>
                                         <div class="product-info">
                                             <div class="color-group"></div>
@@ -302,7 +302,7 @@
                                                 <div class="product-bottom">
                                                     <div class="product-price">
                                                         <span class="red">{{ Products.price }}</span>
-                                                        <span class="old">{{ Products.name }}</span>
+                                                        <span class="old">{{ Products.price_discount }}</span>
                                                     </div>
                                                     <a href="#" class="btn-icon btn-view">
                                                         <span class="icon-bg icon-view"></span>
@@ -679,7 +679,7 @@
 
 <script>
 // import useProducts from "../composables/Products";
-import Header from "./Header";
+import Header from "./HeaderIndex";
 import Footer from "./Footer";
 // import { onMounted } from "vue";
 import axios from "axios";
