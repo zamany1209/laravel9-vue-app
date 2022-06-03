@@ -114,7 +114,8 @@ class ProductController extends Controller
     public function list_categor()
     {
         //
-        return Category::All();
+        $ds = Category::All();
+        return $ds . "data:[{amir:'Hossen'},{amir:'Hossen'},{amir:'Hossen'}]";
     }
     /**
      * Show the form for creating a new resource.
